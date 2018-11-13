@@ -1,0 +1,34 @@
+<html>
+<title>Practice Session</title>
+<body>
+<form name="RegForm" onsubmit="return validate()" method="post"> 
+    <p>Name: <input type="text" name="Name"></p><br> 
+    <p>Contact: <input type="text" name="Telephone"></p><br> 
+    <p><input type="submit" value="send" name="Submit"></p>
+</form>
+</body>
+<script>
+  function validate() {
+    var name = document.forms['RegForm']['Name'];
+    var phone = document.forms['RegForm']['Telephone'];
+    if (name.value == '') {
+      window.alert('Please enter your name.');
+      name.focus();
+      return false;
+    } else if (isNaN(name.value) /*"%d[10]"*/) {
+      alert('name confirmed');
+    } else {
+      window.alert('please enter character');
+    }
+    if (phone.value == '') {
+      window.alert('Please enter your telephone number.');
+      phone.focus();
+      return false;
+    } else if (!isNaN(phone.value) /*phone.value == isNaN(phone.value)*/) {
+      alert('number confirmed');
+    } else {
+      window.alert('please enter numbers only');
+    }
+  }
+</script>
+</html>
